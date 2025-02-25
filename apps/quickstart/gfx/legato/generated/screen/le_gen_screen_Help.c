@@ -38,12 +38,12 @@ leResult screenShow_Help(void)
 
     Help_BackgroundPanel = leWidget_New();
     Help_BackgroundPanel->fn->setPosition(Help_BackgroundPanel, 0, 0);
-    Help_BackgroundPanel->fn->setSize(Help_BackgroundPanel, 800, 480);
+    Help_BackgroundPanel->fn->setSize(Help_BackgroundPanel, 1280, 800);
     Help_BackgroundPanel->fn->setScheme(Help_BackgroundPanel, &WhiteScheme);
     root0->fn->addChild(root0, (leWidget*)Help_BackgroundPanel);
 
     Help_ImageWidgetMCHPLogo = leImageWidget_New();
-    Help_ImageWidgetMCHPLogo->fn->setPosition(Help_ImageWidgetMCHPLogo, 590, 15);
+    Help_ImageWidgetMCHPLogo->fn->setPosition(Help_ImageWidgetMCHPLogo, 1058, 16);
     Help_ImageWidgetMCHPLogo->fn->setSize(Help_ImageWidgetMCHPLogo, 206, 48);
     Help_ImageWidgetMCHPLogo->fn->setBackgroundType(Help_ImageWidgetMCHPLogo, LE_WIDGET_BACKGROUND_NONE);
     Help_ImageWidgetMCHPLogo->fn->setBorderType(Help_ImageWidgetMCHPLogo, LE_WIDGET_BORDER_NONE);
@@ -51,14 +51,14 @@ leResult screenShow_Help(void)
     root0->fn->addChild(root0, (leWidget*)Help_ImageWidgetMCHPLogo);
 
     Help_LabelWidgetHelp = leLabelWidget_New();
-    Help_LabelWidgetHelp->fn->setPosition(Help_LabelWidgetHelp, 120, 70);
+    Help_LabelWidgetHelp->fn->setPosition(Help_LabelWidgetHelp, 360, 100);
     Help_LabelWidgetHelp->fn->setSize(Help_LabelWidgetHelp, 560, 50);
     Help_LabelWidgetHelp->fn->setBackgroundType(Help_LabelWidgetHelp, LE_WIDGET_BACKGROUND_NONE);
     Help_LabelWidgetHelp->fn->setString(Help_LabelWidgetHelp, (leString*)&string_srtHelp);
     root0->fn->addChild(root0, (leWidget*)Help_LabelWidgetHelp);
 
     Help_ImageWidgetQRCode = leImageWidget_New();
-    Help_ImageWidgetQRCode->fn->setPosition(Help_ImageWidgetQRCode, 272, 142);
+    Help_ImageWidgetQRCode->fn->setPosition(Help_ImageWidgetQRCode, 512, 272);
     Help_ImageWidgetQRCode->fn->setSize(Help_ImageWidgetQRCode, 256, 256);
     Help_ImageWidgetQRCode->fn->setBackgroundType(Help_ImageWidgetQRCode, LE_WIDGET_BACKGROUND_NONE);
     Help_ImageWidgetQRCode->fn->setBorderType(Help_ImageWidgetQRCode, LE_WIDGET_BORDER_NONE);
@@ -66,7 +66,7 @@ leResult screenShow_Help(void)
     root0->fn->addChild(root0, (leWidget*)Help_ImageWidgetQRCode);
 
     Help_ImageWidgetMGSLogo = leImageWidget_New();
-    Help_ImageWidgetMGSLogo->fn->setPosition(Help_ImageWidgetMGSLogo, 15, 405);
+    Help_ImageWidgetMGSLogo->fn->setPosition(Help_ImageWidgetMGSLogo, 16, 717);
     Help_ImageWidgetMGSLogo->fn->setSize(Help_ImageWidgetMGSLogo, 240, 67);
     Help_ImageWidgetMGSLogo->fn->setBackgroundType(Help_ImageWidgetMGSLogo, LE_WIDGET_BACKGROUND_NONE);
     Help_ImageWidgetMGSLogo->fn->setBorderType(Help_ImageWidgetMGSLogo, LE_WIDGET_BORDER_NONE);

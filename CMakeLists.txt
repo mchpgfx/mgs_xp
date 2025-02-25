@@ -111,6 +111,7 @@ foreach(FILE_PATH ${gfxSdlSrcList})
 endforeach()
 
 add_subdirectory(apps/quickstart)
+add_subdirectory(apps/spa)
 
 include(cmake/AstyleFormatSource.cmake)
 
