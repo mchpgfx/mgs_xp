@@ -99,8 +99,6 @@ uintptr_t start_timer(unsigned int interval, timer_handler handler, TIMER_TYPE t
     tnode->next = timer_head;
     timer_head = tnode;
 
-	printf("In %s : Done\n",__FUNCTION__);
-
     return (uintptr_t)tnode;
 }
 

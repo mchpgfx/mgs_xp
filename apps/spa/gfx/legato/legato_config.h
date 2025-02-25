@@ -50,24 +50,20 @@ extern "C" {
 // DOM-IGNORE-END
 
 
-#include <toolchain_specifics.h>
-
-#define LE_COHERENT_ATTR                     CACHE_ALIGN
-#define LE_COHERENT_MEMORY                   LE_COHERENT_ATTR
-
-
+#define LE_COHERENT_ATTR                
+#define LE_COHERENT_MEMORY               
 #define LE_DEFAULT_COLOR_MODE                LE_COLOR_MODE_RGB_565
 #define LE_TOUCH_ORIENTATION                 0
 #define LE_RENDER_ORIENTATION                0
 #define LE_DRIVER_LAYER_MODE                 1
 #define LE_DYNAMIC_VTABLES                   0
 
-#define LE_ASSERT_ENABLE                     1
+#define LE_ASSERT_ENABLE                     0
 #define LE_DEBUG                             0 // internal use only, do not change
 #define LE_DEBUG_RENDERER                    0 // internal use only, do not change
 
-#define LE_DEFAULT_SCREEN_WIDTH              1280
-#define LE_DEFAULT_SCREEN_HEIGHT             800
+#define LE_DEFAULT_SCREEN_WIDTH              1024
+#define LE_DEFAULT_SCREEN_HEIGHT             600
 
 // image decoder configuration
 #define LE_ENABLE_RAW_DECODER                1
@@ -144,7 +140,7 @@ extern "C" {
 #define LE_FIXEDHEAP_SIZE_16               300
 #define LE_FIXEDHEAP_SIZE_32               96
 #define LE_FIXEDHEAP_SIZE_64               96
-#define LE_FIXEDHEAP_SIZE_128              32
+#define LE_FIXEDHEAP_SIZE_128              96
 #define LE_FIXEDHEAP_SIZE_196              48
 #define LE_FIXEDHEAP_SIZE_256              24
 

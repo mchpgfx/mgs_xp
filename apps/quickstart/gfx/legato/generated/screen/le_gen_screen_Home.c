@@ -39,12 +39,12 @@ leResult screenShow_Home(void)
 
     Home_BackgroundPanel = leWidget_New();
     Home_BackgroundPanel->fn->setPosition(Home_BackgroundPanel, 0, 0);
-    Home_BackgroundPanel->fn->setSize(Home_BackgroundPanel, 800, 480);
+    Home_BackgroundPanel->fn->setSize(Home_BackgroundPanel, 1280, 800);
     Home_BackgroundPanel->fn->setScheme(Home_BackgroundPanel, &WhiteScheme);
     root0->fn->addChild(root0, (leWidget*)Home_BackgroundPanel);
 
     Home_ImageWidgetMCHPLogo = leImageWidget_New();
-    Home_ImageWidgetMCHPLogo->fn->setPosition(Home_ImageWidgetMCHPLogo, 590, 15);
+    Home_ImageWidgetMCHPLogo->fn->setPosition(Home_ImageWidgetMCHPLogo, 1058, 16);
     Home_ImageWidgetMCHPLogo->fn->setSize(Home_ImageWidgetMCHPLogo, 206, 48);
     Home_ImageWidgetMCHPLogo->fn->setBackgroundType(Home_ImageWidgetMCHPLogo, LE_WIDGET_BACKGROUND_NONE);
     Home_ImageWidgetMCHPLogo->fn->setBorderType(Home_ImageWidgetMCHPLogo, LE_WIDGET_BORDER_NONE);
@@ -52,7 +52,7 @@ leResult screenShow_Home(void)
     root0->fn->addChild(root0, (leWidget*)Home_ImageWidgetMCHPLogo);
 
     Home_ImageWidgetMGSLogo = leImageWidget_New();
-    Home_ImageWidgetMGSLogo->fn->setPosition(Home_ImageWidgetMGSLogo, 15, 405);
+    Home_ImageWidgetMGSLogo->fn->setPosition(Home_ImageWidgetMGSLogo, 16, 717);
     Home_ImageWidgetMGSLogo->fn->setSize(Home_ImageWidgetMGSLogo, 240, 67);
     Home_ImageWidgetMGSLogo->fn->setBackgroundType(Home_ImageWidgetMGSLogo, LE_WIDGET_BACKGROUND_NONE);
     Home_ImageWidgetMGSLogo->fn->setBorderType(Home_ImageWidgetMGSLogo, LE_WIDGET_BORDER_NONE);
@@ -60,7 +60,7 @@ leResult screenShow_Home(void)
     root0->fn->addChild(root0, (leWidget*)Home_ImageWidgetMGSLogo);
 
     Home_ButtonWidgetQuickStart = leButtonWidget_New();
-    Home_ButtonWidgetQuickStart->fn->setPosition(Home_ButtonWidgetQuickStart, 544, 404);
+    Home_ButtonWidgetQuickStart->fn->setPosition(Home_ButtonWidgetQuickStart, 1024, 717);
     Home_ButtonWidgetQuickStart->fn->setSize(Home_ButtonWidgetQuickStart, 240, 67);
     Home_ButtonWidgetQuickStart->fn->setBackgroundType(Home_ButtonWidgetQuickStart, LE_WIDGET_BACKGROUND_NONE);
     Home_ButtonWidgetQuickStart->fn->setBorderType(Home_ButtonWidgetQuickStart, LE_WIDGET_BORDER_NONE);
@@ -73,7 +73,7 @@ leResult screenShow_Home(void)
     root0->fn->addChild(root0, (leWidget*)Home_ButtonWidgetQuickStart);
 
     Home_LabelWidget_0 = leLabelWidget_New();
-    Home_LabelWidget_0->fn->setPosition(Home_LabelWidget_0, 80, 167);
+    Home_LabelWidget_0->fn->setPosition(Home_LabelWidget_0, 313, 341);
     Home_LabelWidget_0->fn->setSize(Home_LabelWidget_0, 188, 100);
     Home_LabelWidget_0->fn->setScheme(Home_LabelWidget_0, &OrangeScheme);
     Home_LabelWidget_0->fn->setBackgroundType(Home_LabelWidget_0, LE_WIDGET_BACKGROUND_NONE);
@@ -81,7 +81,7 @@ leResult screenShow_Home(void)
     root0->fn->addChild(root0, (leWidget*)Home_LabelWidget_0);
 
     Home_LabelWidget_1 = leLabelWidget_New();
-    Home_LabelWidget_1->fn->setPosition(Home_LabelWidget_1, 276, 167);
+    Home_LabelWidget_1->fn->setPosition(Home_LabelWidget_1, 509, 341);
     Home_LabelWidget_1->fn->setSize(Home_LabelWidget_1, 198, 100);
     Home_LabelWidget_1->fn->setScheme(Home_LabelWidget_1, &BlueScheme);
     Home_LabelWidget_1->fn->setBackgroundType(Home_LabelWidget_1, LE_WIDGET_BACKGROUND_NONE);
@@ -89,7 +89,7 @@ leResult screenShow_Home(void)
     root0->fn->addChild(root0, (leWidget*)Home_LabelWidget_1);
 
     Home_LabelWidget_2 = leLabelWidget_New();
-    Home_LabelWidget_2->fn->setPosition(Home_LabelWidget_2, 483, 166);
+    Home_LabelWidget_2->fn->setPosition(Home_LabelWidget_2, 716, 340);
     Home_LabelWidget_2->fn->setSize(Home_LabelWidget_2, 252, 100);
     Home_LabelWidget_2->fn->setScheme(Home_LabelWidget_2, &GreenScheme);
     Home_LabelWidget_2->fn->setBackgroundType(Home_LabelWidget_2, LE_WIDGET_BACKGROUND_NONE);
