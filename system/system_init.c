@@ -148,8 +148,8 @@ void SYS_Tasks(void)
 
 #if USE_SDL2
 	GFX_SDL2_Update();
-//#else
-//	LibInput_Update();
+#else
+	LibInput_Update();
 #endif
 
 	leUpdate(0);

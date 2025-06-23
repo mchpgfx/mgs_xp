@@ -74,7 +74,7 @@ leResult screenShow_Help(void)
     root0->fn->addChild(root0, (leWidget*)Help_ImageWidgetMGSLogo);
 
     Help_ButtonWidgetGoHome = leButtonWidget_New();
-    Help_ButtonWidgetGoHome->fn->setPosition(Help_ButtonWidgetGoHome, 1024, 717);
+    Help_ButtonWidgetGoHome->fn->setPosition(Help_ButtonWidgetGoHome, 547, 397);
     Help_ButtonWidgetGoHome->fn->setSize(Help_ButtonWidgetGoHome, 240, 67);
     Help_ButtonWidgetGoHome->fn->setBackgroundType(Help_ButtonWidgetGoHome, LE_WIDGET_BACKGROUND_NONE);
     Help_ButtonWidgetGoHome->fn->setBorderType(Help_ButtonWidgetGoHome, LE_WIDGET_BORDER_NONE);
