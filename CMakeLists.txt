@@ -112,6 +112,7 @@ endforeach()
 
 add_subdirectory(apps/quickstart)
 add_subdirectory(apps/spa)
+add_subdirectory(apps/mixer_basic)
 
 include(cmake/AstyleFormatSource.cmake)
 
