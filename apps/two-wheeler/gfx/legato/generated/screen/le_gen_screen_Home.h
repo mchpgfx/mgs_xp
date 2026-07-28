@@ -13,7 +13,6 @@ extern "C" {
 // DOM-IGNORE-END
 
 // screen member widget declarations
-extern leWidget* Home_BackgroundPanelBase;
 extern leWidget* Home_panel_electric_moto_cluster;
 extern leWidget* Home_panel_Status_Bar;
 extern leImageWidget* Home_image_imgRegenFullBar;

@@ -13,7 +13,7 @@ extern "C" {
 // DOM-IGNORE-END
 
 // screen member widget declarations
-extern leWidget* NavScreen_BackgroundPanelBase;
+extern leWidget* NavScreen_panel_electric_moto_cluster_0;
 extern leDrawSurfaceWidget* NavScreen_drawNav;
 extern leWidget* NavScreen_panel_electric_moto_cluster;
 extern leWidget* NavScreen_panel_Status_Bar;

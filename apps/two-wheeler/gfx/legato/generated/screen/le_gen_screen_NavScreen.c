@@ -2,10 +2,8 @@
 
 // screen member widget declarations
 static leWidget* root0;
-static leWidget* root1;
-static leWidget* root2;
 
-leWidget* NavScreen_BackgroundPanelBase;
+leWidget* NavScreen_panel_electric_moto_cluster_0;
 leDrawSurfaceWidget* NavScreen_drawNav;
 leWidget* NavScreen_panel_electric_moto_cluster;
 leWidget* NavScreen_panel_Status_Bar;
@@ -113,52 +111,30 @@ leResult screenShow_NavScreen(void)
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
     root0->flags |= LE_WIDGET_IGNOREPICK;
 
-    NavScreen_BackgroundPanelBase = leWidget_New();
-    NavScreen_BackgroundPanelBase->fn->setPosition(NavScreen_BackgroundPanelBase, 0, 0);
-    NavScreen_BackgroundPanelBase->fn->setSize(NavScreen_BackgroundPanelBase, 800, 480);
-    NavScreen_BackgroundPanelBase->fn->setScheme(NavScreen_BackgroundPanelBase, &GaugeScheme);
-    root0->fn->addChild(root0, (leWidget*)NavScreen_BackgroundPanelBase);
+    NavScreen_panel_electric_moto_cluster_0 = leWidget_New();
+    NavScreen_panel_electric_moto_cluster_0->fn->setPosition(NavScreen_panel_electric_moto_cluster_0, 0, 0);
+    NavScreen_panel_electric_moto_cluster_0->fn->setSize(NavScreen_panel_electric_moto_cluster_0, 800, 480);
+    NavScreen_panel_electric_moto_cluster_0->fn->setScheme(NavScreen_panel_electric_moto_cluster_0, &GaugeScheme);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_electric_moto_cluster_0);
 
     NavScreen_drawNav = leDrawSurfaceWidget_New();
     NavScreen_drawNav->fn->setPosition(NavScreen_drawNav, 175, 130);
     NavScreen_drawNav->fn->setSize(NavScreen_drawNav, 480, 250);
-    NavScreen_drawNav->fn->setScheme(NavScreen_drawNav, &GaugeScheme);
+    NavScreen_drawNav->fn->setBackgroundType(NavScreen_drawNav, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_drawNav->fn->setDrawCallback(NavScreen_drawNav, event_NavScreen_drawNav_OnDraw);
     root0->fn->addChild(root0, (leWidget*)NavScreen_drawNav);
-
-    leAddRootWidget(root0, 0);
-    leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
-
-    // layer 1
-    root1 = leWidget_New();
-    root1->fn->setSize(root1, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
-    root1->fn->setBackgroundType(root1, LE_WIDGET_BACKGROUND_NONE);
-    root1->fn->setMargins(root1, 0, 0, 0, 0);
-    root1->flags |= LE_WIDGET_IGNOREEVENTS;
-    root1->flags |= LE_WIDGET_IGNOREPICK;
-
-    leAddRootWidget(root1, 1);
-    leSetLayerColorMode(1, LE_COLOR_MODE_RGBA_8888);
-
-    // layer 2
-    root2 = leWidget_New();
-    root2->fn->setSize(root2, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
-    root2->fn->setBackgroundType(root2, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->setMargins(root2, 0, 0, 0, 0);
-    root2->flags |= LE_WIDGET_IGNOREEVENTS;
-    root2->flags |= LE_WIDGET_IGNOREPICK;
 
     NavScreen_panel_electric_moto_cluster = leWidget_New();
     NavScreen_panel_electric_moto_cluster->fn->setPosition(NavScreen_panel_electric_moto_cluster, 0, 0);
     NavScreen_panel_electric_moto_cluster->fn->setSize(NavScreen_panel_electric_moto_cluster, 800, 480);
     NavScreen_panel_electric_moto_cluster->fn->setScheme(NavScreen_panel_electric_moto_cluster, &ClearScheme);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_electric_moto_cluster);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_electric_moto_cluster);
 
     NavScreen_panel_Status_Bar = leWidget_New();
     NavScreen_panel_Status_Bar->fn->setPosition(NavScreen_panel_Status_Bar, 0, 0);
     NavScreen_panel_Status_Bar->fn->setSize(NavScreen_panel_Status_Bar, 800, 50);
     NavScreen_panel_Status_Bar->fn->setBackgroundType(NavScreen_panel_Status_Bar, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_Status_Bar);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_Status_Bar);
 
     NavScreen_panel_Status_Left = leWidget_New();
     NavScreen_panel_Status_Left->fn->setPosition(NavScreen_panel_Status_Left, 24, 9);
@@ -282,7 +258,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_imgRegenFullBar->fn->setBackgroundType(NavScreen_image_imgRegenFullBar, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_image_imgRegenFullBar->fn->setBorderType(NavScreen_image_imgRegenFullBar, LE_WIDGET_BORDER_NONE);
     NavScreen_image_imgRegenFullBar->fn->setImage(NavScreen_image_imgRegenFullBar, (leImage*)&figmaImg_imgRegenFullBar);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_imgRegenFullBar);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_imgRegenFullBar);
 
     NavScreen_imgRegenBar = leImageWidget_New();
     NavScreen_imgRegenBar->fn->setPosition(NavScreen_imgRegenBar, 0, 270);
@@ -290,7 +266,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_imgRegenBar->fn->setBackgroundType(NavScreen_imgRegenBar, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_imgRegenBar->fn->setBorderType(NavScreen_imgRegenBar, LE_WIDGET_BORDER_NONE);
     NavScreen_imgRegenBar->fn->setImage(NavScreen_imgRegenBar, (leImage*)&figmaImg_imgRegenBar);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_imgRegenBar);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_imgRegenBar);
 
     NavScreen_image_iconBattery = leImageWidget_New();
     NavScreen_image_iconBattery->fn->setPosition(NavScreen_image_iconBattery, 477, 22);
@@ -298,7 +274,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_iconBattery->fn->setBackgroundType(NavScreen_image_iconBattery, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_image_iconBattery->fn->setBorderType(NavScreen_image_iconBattery, LE_WIDGET_BORDER_NONE);
     NavScreen_image_iconBattery->fn->setImage(NavScreen_image_iconBattery, (leImage*)&figmaImg_iconBattery);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_iconBattery);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_iconBattery);
 
     NavScreen_image_iconTemp = leImageWidget_New();
     NavScreen_image_iconTemp->fn->setPosition(NavScreen_image_iconTemp, 515, 18);
@@ -306,13 +282,13 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_iconTemp->fn->setBackgroundType(NavScreen_image_iconTemp, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_image_iconTemp->fn->setBorderType(NavScreen_image_iconTemp, LE_WIDGET_BORDER_NONE);
     NavScreen_image_iconTemp->fn->setImage(NavScreen_image_iconTemp, (leImage*)&figmaImg_iconTemp);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_iconTemp);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_iconTemp);
 
     NavScreen_panel_Shortcut_Bar = leWidget_New();
     NavScreen_panel_Shortcut_Bar->fn->setPosition(NavScreen_panel_Shortcut_Bar, 0, 430);
     NavScreen_panel_Shortcut_Bar->fn->setSize(NavScreen_panel_Shortcut_Bar, 800, 50);
     NavScreen_panel_Shortcut_Bar->fn->setScheme(NavScreen_panel_Shortcut_Bar, &GrayScheme);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_Shortcut_Bar);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_Shortcut_Bar);
 
     NavScreen_btnPhone = leButtonWidget_New();
     NavScreen_btnPhone->fn->setPosition(NavScreen_btnPhone, 570, 10);
@@ -380,7 +356,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_imgPowerTrack->fn->setBackgroundType(NavScreen_image_imgPowerTrack, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_image_imgPowerTrack->fn->setBorderType(NavScreen_image_imgPowerTrack, LE_WIDGET_BORDER_NONE);
     NavScreen_image_imgPowerTrack->fn->setImage(NavScreen_image_imgPowerTrack, (leImage*)&figmaImg_imgPowerTrack);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_imgPowerTrack);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_imgPowerTrack);
 
     NavScreen_image_imgPowerProg = leImageWidget_New();
     NavScreen_image_imgPowerProg->fn->setPosition(NavScreen_image_imgPowerProg, 34, 141);
@@ -389,7 +365,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_imgPowerProg->fn->setBorderType(NavScreen_image_imgPowerProg, LE_WIDGET_BORDER_NONE);
     NavScreen_image_imgPowerProg->fn->setVAlignment(NavScreen_image_imgPowerProg, LE_VALIGN_BOTTOM);
     NavScreen_image_imgPowerProg->fn->setImage(NavScreen_image_imgPowerProg, (leImage*)&PowerActiveTrack);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_imgPowerProg);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_imgPowerProg);
 
     NavScreen_image_imgBatTrack = leImageWidget_New();
     NavScreen_image_imgBatTrack->fn->setPosition(NavScreen_image_imgBatTrack, 703, 143);
@@ -397,7 +373,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_imgBatTrack->fn->setBackgroundType(NavScreen_image_imgBatTrack, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_image_imgBatTrack->fn->setBorderType(NavScreen_image_imgBatTrack, LE_WIDGET_BORDER_NONE);
     NavScreen_image_imgBatTrack->fn->setImage(NavScreen_image_imgBatTrack, (leImage*)&figmaImg_imgBatTrack);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_imgBatTrack);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_imgBatTrack);
 
     NavScreen_image_imgBatProg = leImageWidget_New();
     NavScreen_image_imgBatProg->fn->setPosition(NavScreen_image_imgBatProg, 697, 142);
@@ -406,7 +382,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_image_imgBatProg->fn->setBorderType(NavScreen_image_imgBatProg, LE_WIDGET_BORDER_NONE);
     NavScreen_image_imgBatProg->fn->setVAlignment(NavScreen_image_imgBatProg, LE_VALIGN_BOTTOM);
     NavScreen_image_imgBatProg->fn->setImage(NavScreen_image_imgBatProg, (leImage*)&BatteryActiveTrack);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_image_imgBatProg);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_image_imgBatProg);
 
     NavScreen_label_Battery = leLabelWidget_New();
     NavScreen_label_Battery->fn->setPosition(NavScreen_label_Battery, 669, 224);
@@ -416,7 +392,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_Battery->fn->setVAlignment(NavScreen_label_Battery, LE_VALIGN_TOP);
     NavScreen_label_Battery->fn->setMargins(NavScreen_label_Battery, 0, 0, 0, 0);
     NavScreen_label_Battery->fn->setString(NavScreen_label_Battery, (leString*)&string_figmaStr_Battery);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_Battery);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_Battery);
 
     NavScreen_label_0 = leLabelWidget_New();
     NavScreen_label_0->fn->setPosition(NavScreen_label_0, 721, 256);
@@ -427,7 +403,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_0->fn->setVAlignment(NavScreen_label_0, LE_VALIGN_TOP);
     NavScreen_label_0->fn->setMargins(NavScreen_label_0, 0, 0, 0, 0);
     NavScreen_label_0->fn->setString(NavScreen_label_0, (leString*)&string_figmaStr__Pct);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_0);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_0);
 
     NavScreen_label_BattValue = leLabelWidget_New();
     NavScreen_label_BattValue->fn->setPosition(NavScreen_label_BattValue, 650, 242);
@@ -437,7 +413,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_BattValue->fn->setHAlignment(NavScreen_label_BattValue, LE_HALIGN_RIGHT);
     NavScreen_label_BattValue->fn->setMargins(NavScreen_label_BattValue, 0, 0, 0, 0);
     NavScreen_label_BattValue->fn->setString(NavScreen_label_BattValue, (leString*)&string_figmaStr_72);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_BattValue);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_BattValue);
 
     NavScreen_label_Power = leLabelWidget_New();
     NavScreen_label_Power->fn->setPosition(NavScreen_label_Power, 94, 224);
@@ -448,7 +424,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_Power->fn->setVAlignment(NavScreen_label_Power, LE_VALIGN_TOP);
     NavScreen_label_Power->fn->setMargins(NavScreen_label_Power, 0, 0, 0, 0);
     NavScreen_label_Power->fn->setString(NavScreen_label_Power, (leString*)&string_figmaStr_Power);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_Power);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_Power);
 
     NavScreen_label_PowerValue = leLabelWidget_New();
     NavScreen_label_PowerValue->fn->setPosition(NavScreen_label_PowerValue, 95, 242);
@@ -457,7 +433,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_PowerValue->fn->setBackgroundType(NavScreen_label_PowerValue, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_label_PowerValue->fn->setMargins(NavScreen_label_PowerValue, 0, 0, 0, 0);
     NavScreen_label_PowerValue->fn->setString(NavScreen_label_PowerValue, (leString*)&string_figmaStr_42_5);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_PowerValue);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_PowerValue);
 
     NavScreen_label_kW = leLabelWidget_New();
     NavScreen_label_kW->fn->setPosition(NavScreen_label_kW, 58, 256);
@@ -468,13 +444,13 @@ leResult screenShow_NavScreen(void)
     NavScreen_label_kW->fn->setVAlignment(NavScreen_label_kW, LE_VALIGN_TOP);
     NavScreen_label_kW->fn->setMargins(NavScreen_label_kW, 0, 0, 0, 0);
     NavScreen_label_kW->fn->setString(NavScreen_label_kW, (leString*)&string_figmaStr_kW);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_label_kW);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_label_kW);
 
     NavScreen_panel_Battery_Temp = leWidget_New();
     NavScreen_panel_Battery_Temp->fn->setPosition(NavScreen_panel_Battery_Temp, 35, 378);
     NavScreen_panel_Battery_Temp->fn->setSize(NavScreen_panel_Battery_Temp, 54, 31);
     NavScreen_panel_Battery_Temp->fn->setBackgroundType(NavScreen_panel_Battery_Temp, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_Battery_Temp);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_Battery_Temp);
 
     NavScreen_label_Battery = leLabelWidget_New();
     NavScreen_label_Battery->fn->setPosition(NavScreen_label_Battery, 5, 2);
@@ -500,7 +476,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_panel_Motor_Temp->fn->setPosition(NavScreen_panel_Motor_Temp, 737, 379);
     NavScreen_panel_Motor_Temp->fn->setSize(NavScreen_panel_Motor_Temp, 46, 31);
     NavScreen_panel_Motor_Temp->fn->setBackgroundType(NavScreen_panel_Motor_Temp, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_Motor_Temp);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_Motor_Temp);
 
     NavScreen_label_Motor = leLabelWidget_New();
     NavScreen_label_Motor->fn->setPosition(NavScreen_label_Motor, 10, 1);
@@ -526,7 +502,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_StatPanel->fn->setPosition(NavScreen_StatPanel, 443, 309);
     NavScreen_StatPanel->fn->setSize(NavScreen_StatPanel, 229, 115);
     NavScreen_StatPanel->fn->setBackgroundType(NavScreen_StatPanel, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_StatPanel);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_StatPanel);
 
     NavScreen_label_kph = leLabelWidget_New();
     NavScreen_label_kph->fn->setPosition(NavScreen_label_kph, 157, 8);
@@ -557,7 +533,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_lblDistance->fn->setBackgroundType(NavScreen_lblDistance, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_lblDistance->fn->setMargins(NavScreen_lblDistance, 0, 0, 0, 0);
     NavScreen_lblDistance->fn->setString(NavScreen_lblDistance, (leString*)&string_strDistance);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_lblDistance);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_lblDistance);
 
     NavScreen_lblStreet = leLabelWidget_New();
     NavScreen_lblStreet->fn->setPosition(NavScreen_lblStreet, 366, 86);
@@ -566,7 +542,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_lblStreet->fn->setBackgroundType(NavScreen_lblStreet, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_lblStreet->fn->setMargins(NavScreen_lblStreet, 0, 0, 0, 0);
     NavScreen_lblStreet->fn->setString(NavScreen_lblStreet, (leString*)&string_strStreet);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_lblStreet);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_lblStreet);
 
     NavScreen_imgDirection = leImageWidget_New();
     NavScreen_imgDirection->fn->setPosition(NavScreen_imgDirection, 293, 58);
@@ -574,13 +550,13 @@ leResult screenShow_NavScreen(void)
     NavScreen_imgDirection->fn->setBackgroundType(NavScreen_imgDirection, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_imgDirection->fn->setBorderType(NavScreen_imgDirection, LE_WIDGET_BORDER_NONE);
     NavScreen_imgDirection->fn->setImage(NavScreen_imgDirection, (leImage*)&StraightIcon);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_imgDirection);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_imgDirection);
 
     NavScreen_panel_Drive_Modes = leWidget_New();
     NavScreen_panel_Drive_Modes->fn->setPosition(NavScreen_panel_Drive_Modes, 139, 385);
     NavScreen_panel_Drive_Modes->fn->setSize(NavScreen_panel_Drive_Modes, 275, 41);
     NavScreen_panel_Drive_Modes->fn->setBackgroundType(NavScreen_panel_Drive_Modes, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_panel_Drive_Modes);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_panel_Drive_Modes);
 
     NavScreen_image_imgEcoOff = leImageWidget_New();
     NavScreen_image_imgEcoOff->fn->setPosition(NavScreen_image_imgEcoOff, 18, 7);
@@ -663,13 +639,13 @@ leResult screenShow_NavScreen(void)
     NavScreen_imgDirIcon->fn->setBackgroundType(NavScreen_imgDirIcon, LE_WIDGET_BACKGROUND_NONE);
     NavScreen_imgDirIcon->fn->setBorderType(NavScreen_imgDirIcon, LE_WIDGET_BORDER_NONE);
     NavScreen_imgDirIcon->fn->setImage(NavScreen_imgDirIcon, (leImage*)&DirIcon2);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_imgDirIcon);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_imgDirIcon);
 
     NavScreen_PanelRegenDischarge = leWidget_New();
     NavScreen_PanelRegenDischarge->fn->setPosition(NavScreen_PanelRegenDischarge, 29, 64);
     NavScreen_PanelRegenDischarge->fn->setSize(NavScreen_PanelRegenDischarge, 145, 48);
     NavScreen_PanelRegenDischarge->fn->setBackgroundType(NavScreen_PanelRegenDischarge, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_PanelRegenDischarge);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_PanelRegenDischarge);
 
     NavScreen_image_imgMeterTrack = leImageWidget_New();
     NavScreen_image_imgMeterTrack->fn->setPosition(NavScreen_image_imgMeterTrack, 14, 19);
@@ -731,7 +707,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_RangePanel->fn->setPosition(NavScreen_RangePanel, 638, 56);
     NavScreen_RangePanel->fn->setSize(NavScreen_RangePanel, 128, 60);
     NavScreen_RangePanel->fn->setBackgroundType(NavScreen_RangePanel, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_RangePanel);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_RangePanel);
 
     NavScreen_label_Est_Range = leLabelWidget_New();
     NavScreen_label_Est_Range->fn->setPosition(NavScreen_label_Est_Range, 29, 10);
@@ -766,7 +742,7 @@ leResult screenShow_NavScreen(void)
     NavScreen_touchPanel->fn->setPosition(NavScreen_touchPanel, 115, 119);
     NavScreen_touchPanel->fn->setSize(NavScreen_touchPanel, 575, 260);
     NavScreen_touchPanel->fn->setBackgroundType(NavScreen_touchPanel, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_touchPanel);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_touchPanel);
 
     NavScreen_imgMGS = leImageWidget_New();
     NavScreen_imgMGS->fn->setPosition(NavScreen_imgMGS, 200, 8);
@@ -775,13 +751,13 @@ leResult screenShow_NavScreen(void)
     NavScreen_imgMGS->fn->setBorderType(NavScreen_imgMGS, LE_WIDGET_BORDER_NONE);
     NavScreen_imgMGS->fn->setHAlignment(NavScreen_imgMGS, LE_HALIGN_LEFT);
     NavScreen_imgMGS->fn->setImage(NavScreen_imgMGS, (leImage*)&Image1);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_imgMGS);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_imgMGS);
 
     NavScreen_pnlMetrics = leWidget_New();
     NavScreen_pnlMetrics->fn->setPosition(NavScreen_pnlMetrics, 117, 363);
     NavScreen_pnlMetrics->fn->setSize(NavScreen_pnlMetrics, 296, 20);
     NavScreen_pnlMetrics->fn->setBackgroundType(NavScreen_pnlMetrics, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)NavScreen_pnlMetrics);
+    root0->fn->addChild(root0, (leWidget*)NavScreen_pnlMetrics);
 
     NavScreen_lblUpdatePct = leLabelWidget_New();
     NavScreen_lblUpdatePct->fn->setPosition(NavScreen_lblUpdatePct, 56, 0);
@@ -840,8 +816,8 @@ leResult screenShow_NavScreen(void)
     NavScreen_lblFPS->fn->setString(NavScreen_lblFPS, (leString*)&string_strFPS);
     NavScreen_pnlMetrics->fn->addChild(NavScreen_pnlMetrics, (leWidget*)NavScreen_lblFPS);
 
-    leAddRootWidget(root2, 2);
-    leSetLayerColorMode(2, LE_COLOR_MODE_RGBA_8888);
+    leAddRootWidget(root0, 0);
+    leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
 
     NavScreen_OnShow(); // raise event
 
@@ -853,8 +829,6 @@ leResult screenShow_NavScreen(void)
 void screenUpdate_NavScreen(void)
 {
     root0->fn->setSize(root0, root0->rect.width, root0->rect.height);
-    root1->fn->setSize(root1, root1->rect.width, root1->rect.height);
-    root2->fn->setSize(root2, root2->rect.width, root2->rect.height);
 
     NavScreen_OnUpdate(); // raise event
 }
@@ -868,17 +842,8 @@ void screenHide_NavScreen(void)
     leWidget_Delete(root0);
     root0 = NULL;
 
-    NavScreen_BackgroundPanelBase = NULL;
+    NavScreen_panel_electric_moto_cluster_0 = NULL;
     NavScreen_drawNav = NULL;
-
-    leRemoveRootWidget(root1, 1);
-    leWidget_Delete(root1);
-    root1 = NULL;
-
-    leRemoveRootWidget(root2, 2);
-    leWidget_Delete(root2);
-    root2 = NULL;
-
     NavScreen_panel_electric_moto_cluster = NULL;
     NavScreen_panel_Status_Bar = NULL;
     NavScreen_image_imgRegenFullBar = NULL;
@@ -981,14 +946,6 @@ leWidget* screenGetRoot_NavScreen(uint32_t lyrIdx)
         case 0:
         {
             return root0;
-        }
-        case 1:
-        {
-            return root1;
-        }
-        case 2:
-        {
-            return root2;
         }
         default:
         {

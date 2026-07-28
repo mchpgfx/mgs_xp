@@ -2,10 +2,7 @@
 
 // screen member widget declarations
 static leWidget* root0;
-static leWidget* root1;
-static leWidget* root2;
 
-leWidget* Home_BackgroundPanelBase;
 leWidget* Home_panel_electric_moto_cluster;
 leWidget* Home_panel_Status_Bar;
 leImageWidget* Home_image_imgRegenFullBar;
@@ -105,46 +102,17 @@ leResult screenShow_Home(void)
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
     root0->flags |= LE_WIDGET_IGNOREPICK;
 
-    Home_BackgroundPanelBase = leWidget_New();
-    Home_BackgroundPanelBase->fn->setPosition(Home_BackgroundPanelBase, 0, 0);
-    Home_BackgroundPanelBase->fn->setSize(Home_BackgroundPanelBase, 800, 480);
-    Home_BackgroundPanelBase->fn->setVisible(Home_BackgroundPanelBase, LE_FALSE);
-    Home_BackgroundPanelBase->fn->setScheme(Home_BackgroundPanelBase, &GaugeScheme);
-    root0->fn->addChild(root0, (leWidget*)Home_BackgroundPanelBase);
-
-    leAddRootWidget(root0, 0);
-    leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
-
-    // layer 1
-    root1 = leWidget_New();
-    root1->fn->setSize(root1, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
-    root1->fn->setBackgroundType(root1, LE_WIDGET_BACKGROUND_NONE);
-    root1->fn->setMargins(root1, 0, 0, 0, 0);
-    root1->flags |= LE_WIDGET_IGNOREEVENTS;
-    root1->flags |= LE_WIDGET_IGNOREPICK;
-
-    leAddRootWidget(root1, 1);
-    leSetLayerColorMode(1, LE_COLOR_MODE_RGBA_8888);
-
-    // layer 2
-    root2 = leWidget_New();
-    root2->fn->setSize(root2, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
-    root2->fn->setBackgroundType(root2, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->setMargins(root2, 0, 0, 0, 0);
-    root2->flags |= LE_WIDGET_IGNOREEVENTS;
-    root2->flags |= LE_WIDGET_IGNOREPICK;
-
     Home_panel_electric_moto_cluster = leWidget_New();
     Home_panel_electric_moto_cluster->fn->setPosition(Home_panel_electric_moto_cluster, 0, 0);
     Home_panel_electric_moto_cluster->fn->setSize(Home_panel_electric_moto_cluster, 800, 480);
-    Home_panel_electric_moto_cluster->fn->setScheme(Home_panel_electric_moto_cluster, &ClearScheme);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_electric_moto_cluster);
+    Home_panel_electric_moto_cluster->fn->setScheme(Home_panel_electric_moto_cluster, &GaugeScheme);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_electric_moto_cluster);
 
     Home_panel_Status_Bar = leWidget_New();
     Home_panel_Status_Bar->fn->setPosition(Home_panel_Status_Bar, 0, 0);
     Home_panel_Status_Bar->fn->setSize(Home_panel_Status_Bar, 800, 50);
     Home_panel_Status_Bar->fn->setBackgroundType(Home_panel_Status_Bar, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_Status_Bar);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_Status_Bar);
 
     Home_panel_Status_Left = leWidget_New();
     Home_panel_Status_Left->fn->setPosition(Home_panel_Status_Left, 24, 9);
@@ -268,7 +236,7 @@ leResult screenShow_Home(void)
     Home_image_imgRegenFullBar->fn->setBackgroundType(Home_image_imgRegenFullBar, LE_WIDGET_BACKGROUND_NONE);
     Home_image_imgRegenFullBar->fn->setBorderType(Home_image_imgRegenFullBar, LE_WIDGET_BORDER_NONE);
     Home_image_imgRegenFullBar->fn->setImage(Home_image_imgRegenFullBar, (leImage*)&figmaImg_imgRegenFullBar);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgRegenFullBar);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgRegenFullBar);
 
     Home_imgRegenBar = leImageWidget_New();
     Home_imgRegenBar->fn->setPosition(Home_imgRegenBar, 0, 270);
@@ -276,13 +244,13 @@ leResult screenShow_Home(void)
     Home_imgRegenBar->fn->setBackgroundType(Home_imgRegenBar, LE_WIDGET_BACKGROUND_NONE);
     Home_imgRegenBar->fn->setBorderType(Home_imgRegenBar, LE_WIDGET_BORDER_NONE);
     Home_imgRegenBar->fn->setImage(Home_imgRegenBar, (leImage*)&figmaImg_imgRegenBar);
-    root2->fn->addChild(root2, (leWidget*)Home_imgRegenBar);
+    root0->fn->addChild(root0, (leWidget*)Home_imgRegenBar);
 
     Home_panel_Drive_Modes = leWidget_New();
     Home_panel_Drive_Modes->fn->setPosition(Home_panel_Drive_Modes, 279, 340);
     Home_panel_Drive_Modes->fn->setSize(Home_panel_Drive_Modes, 243, 24);
     Home_panel_Drive_Modes->fn->setBackgroundType(Home_panel_Drive_Modes, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_Drive_Modes);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_Drive_Modes);
 
     Home_image_imgEcoOff = leImageWidget_New();
     Home_image_imgEcoOff->fn->setPosition(Home_image_imgEcoOff, 0, 0);
@@ -365,7 +333,7 @@ leResult screenShow_Home(void)
     Home_image_iconBattery->fn->setBackgroundType(Home_image_iconBattery, LE_WIDGET_BACKGROUND_NONE);
     Home_image_iconBattery->fn->setBorderType(Home_image_iconBattery, LE_WIDGET_BORDER_NONE);
     Home_image_iconBattery->fn->setImage(Home_image_iconBattery, (leImage*)&figmaImg_iconBattery);
-    root2->fn->addChild(root2, (leWidget*)Home_image_iconBattery);
+    root0->fn->addChild(root0, (leWidget*)Home_image_iconBattery);
 
     Home_image_iconTemp = leImageWidget_New();
     Home_image_iconTemp->fn->setPosition(Home_image_iconTemp, 105, 59);
@@ -373,13 +341,13 @@ leResult screenShow_Home(void)
     Home_image_iconTemp->fn->setBackgroundType(Home_image_iconTemp, LE_WIDGET_BACKGROUND_NONE);
     Home_image_iconTemp->fn->setBorderType(Home_image_iconTemp, LE_WIDGET_BORDER_NONE);
     Home_image_iconTemp->fn->setImage(Home_image_iconTemp, (leImage*)&figmaImg_iconTemp);
-    root2->fn->addChild(root2, (leWidget*)Home_image_iconTemp);
+    root0->fn->addChild(root0, (leWidget*)Home_image_iconTemp);
 
     Home_panel_Shortcut_Bar = leWidget_New();
     Home_panel_Shortcut_Bar->fn->setPosition(Home_panel_Shortcut_Bar, 0, 430);
     Home_panel_Shortcut_Bar->fn->setSize(Home_panel_Shortcut_Bar, 800, 50);
     Home_panel_Shortcut_Bar->fn->setScheme(Home_panel_Shortcut_Bar, &GrayScheme);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_Shortcut_Bar);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_Shortcut_Bar);
 
     Home_btnPhone = leButtonWidget_New();
     Home_btnPhone->fn->setPosition(Home_btnPhone, 570, 10);
@@ -447,7 +415,7 @@ leResult screenShow_Home(void)
     Home_image_imgEnergyFlow->fn->setBackgroundType(Home_image_imgEnergyFlow, LE_WIDGET_BACKGROUND_NONE);
     Home_image_imgEnergyFlow->fn->setBorderType(Home_image_imgEnergyFlow, LE_WIDGET_BORDER_NONE);
     Home_image_imgEnergyFlow->fn->setImage(Home_image_imgEnergyFlow, (leImage*)&figmaImg_imgEnergyFlow);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgEnergyFlow);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgEnergyFlow);
 
     Home_label_REGEN = leLabelWidget_New();
     Home_label_REGEN->fn->setPosition(Home_label_REGEN, 288, 319);
@@ -457,7 +425,7 @@ leResult screenShow_Home(void)
     Home_label_REGEN->fn->setVAlignment(Home_label_REGEN, LE_VALIGN_TOP);
     Home_label_REGEN->fn->setMargins(Home_label_REGEN, 0, 0, 0, 0);
     Home_label_REGEN->fn->setString(Home_label_REGEN, (leString*)&string_figmaStr_REGEN);
-    root2->fn->addChild(root2, (leWidget*)Home_label_REGEN);
+    root0->fn->addChild(root0, (leWidget*)Home_label_REGEN);
 
     Home_image_imgMeterTrack = leImageWidget_New();
     Home_image_imgMeterTrack->fn->setPosition(Home_image_imgMeterTrack, 328, 323);
@@ -465,7 +433,7 @@ leResult screenShow_Home(void)
     Home_image_imgMeterTrack->fn->setBackgroundType(Home_image_imgMeterTrack, LE_WIDGET_BACKGROUND_NONE);
     Home_image_imgMeterTrack->fn->setBorderType(Home_image_imgMeterTrack, LE_WIDGET_BORDER_NONE);
     Home_image_imgMeterTrack->fn->setImage(Home_image_imgMeterTrack, (leImage*)&figmaImg_imgMeterTrack);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgMeterTrack);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgMeterTrack);
 
     Home_label_DISCHARGE = leLabelWidget_New();
     Home_label_DISCHARGE->fn->setPosition(Home_label_DISCHARGE, 458, 319);
@@ -475,7 +443,7 @@ leResult screenShow_Home(void)
     Home_label_DISCHARGE->fn->setVAlignment(Home_label_DISCHARGE, LE_VALIGN_TOP);
     Home_label_DISCHARGE->fn->setMargins(Home_label_DISCHARGE, 0, 0, 0, 0);
     Home_label_DISCHARGE->fn->setString(Home_label_DISCHARGE, (leString*)&string_figmaStr_DISCHARGE);
-    root2->fn->addChild(root2, (leWidget*)Home_label_DISCHARGE);
+    root0->fn->addChild(root0, (leWidget*)Home_label_DISCHARGE);
 
     Home_image_imgPowerTrack = leImageWidget_New();
     Home_image_imgPowerTrack->fn->setPosition(Home_image_imgPowerTrack, 40, 143);
@@ -483,7 +451,7 @@ leResult screenShow_Home(void)
     Home_image_imgPowerTrack->fn->setBackgroundType(Home_image_imgPowerTrack, LE_WIDGET_BACKGROUND_NONE);
     Home_image_imgPowerTrack->fn->setBorderType(Home_image_imgPowerTrack, LE_WIDGET_BORDER_NONE);
     Home_image_imgPowerTrack->fn->setImage(Home_image_imgPowerTrack, (leImage*)&figmaImg_imgPowerTrack);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgPowerTrack);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgPowerTrack);
 
     Home_image_imgPowerProg = leImageWidget_New();
     Home_image_imgPowerProg->fn->setPosition(Home_image_imgPowerProg, 34, 141);
@@ -492,7 +460,7 @@ leResult screenShow_Home(void)
     Home_image_imgPowerProg->fn->setBorderType(Home_image_imgPowerProg, LE_WIDGET_BORDER_NONE);
     Home_image_imgPowerProg->fn->setVAlignment(Home_image_imgPowerProg, LE_VALIGN_BOTTOM);
     Home_image_imgPowerProg->fn->setImage(Home_image_imgPowerProg, (leImage*)&PowerActiveTrack);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgPowerProg);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgPowerProg);
 
     Home_image_imgBatTrack = leImageWidget_New();
     Home_image_imgBatTrack->fn->setPosition(Home_image_imgBatTrack, 703, 143);
@@ -500,7 +468,7 @@ leResult screenShow_Home(void)
     Home_image_imgBatTrack->fn->setBackgroundType(Home_image_imgBatTrack, LE_WIDGET_BACKGROUND_NONE);
     Home_image_imgBatTrack->fn->setBorderType(Home_image_imgBatTrack, LE_WIDGET_BORDER_NONE);
     Home_image_imgBatTrack->fn->setImage(Home_image_imgBatTrack, (leImage*)&figmaImg_imgBatTrack);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgBatTrack);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgBatTrack);
 
     Home_image_imgBatProg = leImageWidget_New();
     Home_image_imgBatProg->fn->setPosition(Home_image_imgBatProg, 697, 142);
@@ -509,7 +477,7 @@ leResult screenShow_Home(void)
     Home_image_imgBatProg->fn->setBorderType(Home_image_imgBatProg, LE_WIDGET_BORDER_NONE);
     Home_image_imgBatProg->fn->setVAlignment(Home_image_imgBatProg, LE_VALIGN_BOTTOM);
     Home_image_imgBatProg->fn->setImage(Home_image_imgBatProg, (leImage*)&BatteryActiveTrack);
-    root2->fn->addChild(root2, (leWidget*)Home_image_imgBatProg);
+    root0->fn->addChild(root0, (leWidget*)Home_image_imgBatProg);
 
     Home_label_Battery = leLabelWidget_New();
     Home_label_Battery->fn->setPosition(Home_label_Battery, 669, 224);
@@ -519,7 +487,7 @@ leResult screenShow_Home(void)
     Home_label_Battery->fn->setVAlignment(Home_label_Battery, LE_VALIGN_TOP);
     Home_label_Battery->fn->setMargins(Home_label_Battery, 0, 0, 0, 0);
     Home_label_Battery->fn->setString(Home_label_Battery, (leString*)&string_figmaStr_Battery);
-    root2->fn->addChild(root2, (leWidget*)Home_label_Battery);
+    root0->fn->addChild(root0, (leWidget*)Home_label_Battery);
 
     Home_label_0 = leLabelWidget_New();
     Home_label_0->fn->setPosition(Home_label_0, 721, 256);
@@ -530,7 +498,7 @@ leResult screenShow_Home(void)
     Home_label_0->fn->setVAlignment(Home_label_0, LE_VALIGN_TOP);
     Home_label_0->fn->setMargins(Home_label_0, 0, 0, 0, 0);
     Home_label_0->fn->setString(Home_label_0, (leString*)&string_figmaStr__Pct);
-    root2->fn->addChild(root2, (leWidget*)Home_label_0);
+    root0->fn->addChild(root0, (leWidget*)Home_label_0);
 
     Home_label_BattValue = leLabelWidget_New();
     Home_label_BattValue->fn->setPosition(Home_label_BattValue, 650, 242);
@@ -540,7 +508,7 @@ leResult screenShow_Home(void)
     Home_label_BattValue->fn->setHAlignment(Home_label_BattValue, LE_HALIGN_RIGHT);
     Home_label_BattValue->fn->setMargins(Home_label_BattValue, 0, 0, 0, 0);
     Home_label_BattValue->fn->setString(Home_label_BattValue, (leString*)&string_figmaStr_72);
-    root2->fn->addChild(root2, (leWidget*)Home_label_BattValue);
+    root0->fn->addChild(root0, (leWidget*)Home_label_BattValue);
 
     Home_label_Power = leLabelWidget_New();
     Home_label_Power->fn->setPosition(Home_label_Power, 94, 224);
@@ -551,7 +519,7 @@ leResult screenShow_Home(void)
     Home_label_Power->fn->setVAlignment(Home_label_Power, LE_VALIGN_TOP);
     Home_label_Power->fn->setMargins(Home_label_Power, 0, 0, 0, 0);
     Home_label_Power->fn->setString(Home_label_Power, (leString*)&string_figmaStr_Power);
-    root2->fn->addChild(root2, (leWidget*)Home_label_Power);
+    root0->fn->addChild(root0, (leWidget*)Home_label_Power);
 
     Home_label_PowerValue = leLabelWidget_New();
     Home_label_PowerValue->fn->setPosition(Home_label_PowerValue, 95, 242);
@@ -560,7 +528,7 @@ leResult screenShow_Home(void)
     Home_label_PowerValue->fn->setBackgroundType(Home_label_PowerValue, LE_WIDGET_BACKGROUND_NONE);
     Home_label_PowerValue->fn->setMargins(Home_label_PowerValue, 0, 0, 0, 0);
     Home_label_PowerValue->fn->setString(Home_label_PowerValue, (leString*)&string_figmaStr_42_5);
-    root2->fn->addChild(root2, (leWidget*)Home_label_PowerValue);
+    root0->fn->addChild(root0, (leWidget*)Home_label_PowerValue);
 
     Home_label_kW = leLabelWidget_New();
     Home_label_kW->fn->setPosition(Home_label_kW, 58, 256);
@@ -571,7 +539,7 @@ leResult screenShow_Home(void)
     Home_label_kW->fn->setVAlignment(Home_label_kW, LE_VALIGN_TOP);
     Home_label_kW->fn->setMargins(Home_label_kW, 0, 0, 0, 0);
     Home_label_kW->fn->setString(Home_label_kW, (leString*)&string_figmaStr_kW);
-    root2->fn->addChild(root2, (leWidget*)Home_label_kW);
+    root0->fn->addChild(root0, (leWidget*)Home_label_kW);
 
     Home_lblGauge = leLabelWidget_New();
     Home_lblGauge->fn->setPosition(Home_lblGauge, 229, 180);
@@ -581,7 +549,7 @@ leResult screenShow_Home(void)
     Home_lblGauge->fn->setHAlignment(Home_lblGauge, LE_HALIGN_CENTER);
     Home_lblGauge->fn->setMargins(Home_lblGauge, 0, 0, 0, 0);
     Home_lblGauge->fn->setString(Home_lblGauge, (leString*)&string_figmaStr_124);
-    root2->fn->addChild(root2, (leWidget*)Home_lblGauge);
+    root0->fn->addChild(root0, (leWidget*)Home_lblGauge);
 
     Home_label_MPH = leLabelWidget_New();
     Home_label_MPH->fn->setPosition(Home_label_MPH, 464, 154);
@@ -591,13 +559,13 @@ leResult screenShow_Home(void)
     Home_label_MPH->fn->setVAlignment(Home_label_MPH, LE_VALIGN_TOP);
     Home_label_MPH->fn->setMargins(Home_label_MPH, 0, 0, 0, 0);
     Home_label_MPH->fn->setString(Home_label_MPH, (leString*)&string_figmaStr_KPH);
-    root2->fn->addChild(root2, (leWidget*)Home_label_MPH);
+    root0->fn->addChild(root0, (leWidget*)Home_label_MPH);
 
     Home_panel_Battery_Temp = leWidget_New();
     Home_panel_Battery_Temp->fn->setPosition(Home_panel_Battery_Temp, 36, 378);
     Home_panel_Battery_Temp->fn->setSize(Home_panel_Battery_Temp, 54, 31);
     Home_panel_Battery_Temp->fn->setBackgroundType(Home_panel_Battery_Temp, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_Battery_Temp);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_Battery_Temp);
 
     Home_label_Battery = leLabelWidget_New();
     Home_label_Battery->fn->setPosition(Home_label_Battery, 4, 2);
@@ -627,7 +595,7 @@ leResult screenShow_Home(void)
     Home_label_Est_Range->fn->setVAlignment(Home_label_Est_Range, LE_VALIGN_TOP);
     Home_label_Est_Range->fn->setMargins(Home_label_Est_Range, 0, 0, 0, 0);
     Home_label_Est_Range->fn->setString(Home_label_Est_Range, (leString*)&string_figmaStr_Est__Range);
-    root2->fn->addChild(root2, (leWidget*)Home_label_Est_Range);
+    root0->fn->addChild(root0, (leWidget*)Home_label_Est_Range);
 
     Home_label_Range = leLabelWidget_New();
     Home_label_Range->fn->setPosition(Home_label_Range, 327, 387);
@@ -637,7 +605,7 @@ leResult screenShow_Home(void)
     Home_label_Range->fn->setHAlignment(Home_label_Range, LE_HALIGN_RIGHT);
     Home_label_Range->fn->setMargins(Home_label_Range, 0, 0, 0, 0);
     Home_label_Range->fn->setString(Home_label_Range, (leString*)&string_figmaStr_184);
-    root2->fn->addChild(root2, (leWidget*)Home_label_Range);
+    root0->fn->addChild(root0, (leWidget*)Home_label_Range);
 
     Home_label_KM = leLabelWidget_New();
     Home_label_KM->fn->setPosition(Home_label_KM, 435, 403);
@@ -647,13 +615,13 @@ leResult screenShow_Home(void)
     Home_label_KM->fn->setVAlignment(Home_label_KM, LE_VALIGN_TOP);
     Home_label_KM->fn->setMargins(Home_label_KM, 0, 0, 0, 0);
     Home_label_KM->fn->setString(Home_label_KM, (leString*)&string_figmaStr_KM);
-    root2->fn->addChild(root2, (leWidget*)Home_label_KM);
+    root0->fn->addChild(root0, (leWidget*)Home_label_KM);
 
     Home_panel_Motor_Temp = leWidget_New();
     Home_panel_Motor_Temp->fn->setPosition(Home_panel_Motor_Temp, 735, 379);
     Home_panel_Motor_Temp->fn->setSize(Home_panel_Motor_Temp, 46, 31);
     Home_panel_Motor_Temp->fn->setBackgroundType(Home_panel_Motor_Temp, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_panel_Motor_Temp);
+    root0->fn->addChild(root0, (leWidget*)Home_panel_Motor_Temp);
 
     Home_label_Motor = leLabelWidget_New();
     Home_label_Motor->fn->setPosition(Home_label_Motor, 12, 1);
@@ -683,7 +651,7 @@ leResult screenShow_Home(void)
     Home_image_RegenBar->fn->setHAlignment(Home_image_RegenBar, LE_HALIGN_LEFT);
     Home_image_RegenBar->fn->setMargins(Home_image_RegenBar, 0, 4, 4, 4);
     Home_image_RegenBar->fn->setImage(Home_image_RegenBar, (leImage*)&imgregendischarge);
-    root2->fn->addChild(root2, (leWidget*)Home_image_RegenBar);
+    root0->fn->addChild(root0, (leWidget*)Home_image_RegenBar);
 
     Home_image_DischargeBar = leImageWidget_New();
     Home_image_DischargeBar->fn->setPosition(Home_image_DischargeBar, 388, 323);
@@ -693,13 +661,13 @@ leResult screenShow_Home(void)
     Home_image_DischargeBar->fn->setHAlignment(Home_image_DischargeBar, LE_HALIGN_RIGHT);
     Home_image_DischargeBar->fn->setMargins(Home_image_DischargeBar, 0, 4, 0, 4);
     Home_image_DischargeBar->fn->setImage(Home_image_DischargeBar, (leImage*)&imgregendischarge);
-    root2->fn->addChild(root2, (leWidget*)Home_image_DischargeBar);
+    root0->fn->addChild(root0, (leWidget*)Home_image_DischargeBar);
 
     Home_touchPanel = leWidget_New();
     Home_touchPanel->fn->setPosition(Home_touchPanel, 115, 119);
     Home_touchPanel->fn->setSize(Home_touchPanel, 575, 260);
     Home_touchPanel->fn->setBackgroundType(Home_touchPanel, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_touchPanel);
+    root0->fn->addChild(root0, (leWidget*)Home_touchPanel);
 
     Home_imgMGS = leImageWidget_New();
     Home_imgMGS->fn->setPosition(Home_imgMGS, 680, 63);
@@ -708,13 +676,13 @@ leResult screenShow_Home(void)
     Home_imgMGS->fn->setBorderType(Home_imgMGS, LE_WIDGET_BORDER_NONE);
     Home_imgMGS->fn->setHAlignment(Home_imgMGS, LE_HALIGN_LEFT);
     Home_imgMGS->fn->setImage(Home_imgMGS, (leImage*)&Image1);
-    root2->fn->addChild(root2, (leWidget*)Home_imgMGS);
+    root0->fn->addChild(root0, (leWidget*)Home_imgMGS);
 
     Home_pnlMetrics = leWidget_New();
     Home_pnlMetrics->fn->setPosition(Home_pnlMetrics, 136, 342);
     Home_pnlMetrics->fn->setSize(Home_pnlMetrics, 120, 61);
     Home_pnlMetrics->fn->setBackgroundType(Home_pnlMetrics, LE_WIDGET_BACKGROUND_NONE);
-    root2->fn->addChild(root2, (leWidget*)Home_pnlMetrics);
+    root0->fn->addChild(root0, (leWidget*)Home_pnlMetrics);
 
     Home_lblUpdatePct = leLabelWidget_New();
     Home_lblUpdatePct->fn->setPosition(Home_lblUpdatePct, 72, 0);
@@ -773,8 +741,8 @@ leResult screenShow_Home(void)
     Home_lblFPS->fn->setString(Home_lblFPS, (leString*)&string_strFPS);
     Home_pnlMetrics->fn->addChild(Home_pnlMetrics, (leWidget*)Home_lblFPS);
 
-    leAddRootWidget(root2, 2);
-    leSetLayerColorMode(2, LE_COLOR_MODE_RGBA_8888);
+    leAddRootWidget(root0, 0);
+    leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
 
     Home_OnShow(); // raise event
 
@@ -786,8 +754,6 @@ leResult screenShow_Home(void)
 void screenUpdate_Home(void)
 {
     root0->fn->setSize(root0, root0->rect.width, root0->rect.height);
-    root1->fn->setSize(root1, root1->rect.width, root1->rect.height);
-    root2->fn->setSize(root2, root2->rect.width, root2->rect.height);
 
     Home_OnUpdate(); // raise event
 }
@@ -800,16 +766,6 @@ void screenHide_Home(void)
     leRemoveRootWidget(root0, 0);
     leWidget_Delete(root0);
     root0 = NULL;
-
-    Home_BackgroundPanelBase = NULL;
-
-    leRemoveRootWidget(root1, 1);
-    leWidget_Delete(root1);
-    root1 = NULL;
-
-    leRemoveRootWidget(root2, 2);
-    leWidget_Delete(root2);
-    root2 = NULL;
 
     Home_panel_electric_moto_cluster = NULL;
     Home_panel_Status_Bar = NULL;
@@ -906,14 +862,6 @@ leWidget* screenGetRoot_Home(uint32_t lyrIdx)
         case 0:
         {
             return root0;
-        }
-        case 1:
-        {
-            return root1;
-        }
-        case 2:
-        {
-            return root2;
         }
         default:
         {
