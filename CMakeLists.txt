@@ -110,7 +110,8 @@ foreach(FILE_PATH ${gfxSdlSrcList})
     message(STATUS "  ${FILE_PATH}")
 endforeach()
 
-add_subdirectory(apps/quickstart)
+#add_subdirectory(apps/quickstart)
+add_subdirectory(apps/two-wheeler)
 
 include(cmake/AstyleFormatSource.cmake)
 

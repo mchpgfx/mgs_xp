@@ -1,0 +1,174 @@
+#include "gfx/legato/generated/le_gen_assets.h"
+
+/*****************************************************************************
+ * Legato String Table
+ * Encoding        ASCII
+ * Language Count: 1
+ * String Count:   35
+ *****************************************************************************/
+
+/*****************************************************************************
+ * string table data
+ * 
+ * this table contains the raw character data for each string
+ * 
+ * unsigned short - number of indices in the table
+ * unsigned short - number of languages in the table
+ * 
+ * index array (size = number of indices * number of languages
+ * 
+ * for each index in the array:
+ *   unsigned byte - the font ID for the index
+ *   unsigned byte[3] - the offset of the string codepoint data in
+ *                      the table
+ * 
+ * string data is found by jumping to the index offset from the start
+ * of the table
+ * 
+ * string data entry:
+ *     unsigned short - length of the string in bytes (encoding dependent)
+ *     codepoint data - the string data
+ ****************************************************************************/
+
+const uint8_t stringTable_data[420] =
+{
+    0x23,0x00,0x01,0x00,0x06,0x90,0x00,0x00,0x0E,0x9A,0x00,0x00,0x0E,0xA4,0x00,0x00,
+    0x0E,0xA8,0x00,0x00,0x09,0xB0,0x00,0x00,0x0F,0xB6,0x00,0x00,0x02,0xBC,0x00,0x00,
+    0x0E,0xC2,0x00,0x00,0x06,0xCA,0x00,0x00,0x06,0xD4,0x00,0x00,0x10,0xE0,0x00,0x00,
+    0x0D,0xEA,0x00,0x00,0x08,0xEE,0x00,0x00,0x0F,0xF4,0x00,0x00,0x0B,0xFA,0x00,0x00,
+    0x10,0x02,0x01,0x00,0x11,0x0E,0x01,0x00,0x0C,0x14,0x01,0x00,0x0F,0x1C,0x01,0x00,
+    0x10,0x24,0x01,0x00,0x10,0x2C,0x01,0x00,0x0F,0x38,0x01,0x00,0x0B,0x40,0x01,0x00,
+    0x10,0x50,0x01,0x00,0x0A,0x56,0x01,0x00,0x03,0x5C,0x01,0x00,0x10,0x62,0x01,0x00,
+    0x0F,0x6A,0x01,0x00,0x06,0x74,0x01,0x00,0x10,0x7A,0x01,0x00,0x0E,0x82,0x01,0x00,
+    0x09,0x8E,0x01,0x00,0x0F,0x92,0x01,0x00,0x0B,0x9A,0x01,0x00,0x05,0xA0,0x01,0x00,
+    0x07,0x00,0x55,0x70,0x64,0x61,0x74,0x65,0x3A,0x00,0x08,0x00,0x30,0x34,0x32,0x2E,
+    0x38,0x20,0x6B,0x6D,0x02,0x00,0x6B,0x57,0x05,0x00,0x33,0x38,0xC2,0xB0,0x43,0x00,
+    0x04,0x00,0x34,0x32,0x2E,0x35,0x03,0x00,0x45,0x43,0x4F,0x00,0x03,0x00,0x4B,0x50,
+    0x48,0x00,0x05,0x00,0x36,0x32,0xC2,0xB0,0x43,0x00,0x07,0x00,0x52,0x65,0x6E,0x64,
+    0x65,0x72,0x3A,0x00,0x09,0x00,0x41,0x6E,0x69,0x6D,0x2F,0x55,0x70,0x64,0x3A,0x00,
+    0x07,0x00,0x42,0x61,0x74,0x74,0x65,0x72,0x79,0x00,0x02,0x00,0x4B,0x4D,0x03,0x00,
+    0x31,0x32,0x34,0x00,0x04,0x00,0x54,0x4F,0x55,0x52,0x06,0x00,0x32,0x2E,0x38,0x20,
+    0x6B,0x6D,0x0A,0x00,0x45,0x73,0x74,0x2E,0x20,0x52,0x61,0x6E,0x67,0x65,0x03,0x00,
+    0x31,0x32,0x34,0x00,0x05,0x00,0x32,0x30,0x3A,0x34,0x35,0x00,0x05,0x00,0x50,0x6F,
+    0x77,0x65,0x72,0x00,0x05,0x00,0x52,0x45,0x47,0x45,0x4E,0x00,0x09,0x00,0x44,0x49,
+    0x53,0x43,0x48,0x41,0x52,0x47,0x45,0x00,0x05,0x00,0x53,0x50,0x4F,0x52,0x54,0x00,
+    0x0D,0x00,0x43,0x68,0x61,0x6E,0x64,0x6C,0x65,0x72,0x20,0x42,0x6C,0x76,0x64,0x00,
+    0x03,0x00,0x4F,0x44,0x4F,0x00,0x03,0x00,0x31,0x38,0x34,0x00,0x03,0x00,0x31,0x32,
+    0x30,0x00,0x05,0x00,0x4D,0x6F,0x74,0x6F,0x72,0x00,0x07,0x00,0x42,0x61,0x74,0x74,
+    0x65,0x72,0x79,0x00,0x04,0x00,0x46,0x50,0x53,0x3A,0x06,0x00,0x54,0x52,0x49,0x50,
+    0x20,0x41,0x09,0x00,0x30,0x30,0x31,0x32,0x34,0x30,0x20,0x6B,0x6D,0x00,0x02,0x00,
+    0x37,0x32,0x05,0x00,0x42,0x4F,0x4F,0x53,0x54,0x00,0x03,0x00,0x4B,0x50,0x48,0x00,
+    0x01,0x00,0x25,0x00,
+};
+
+/* font asset pointer list */
+leFont* fontList[18] =
+{
+    (leFont*)&bigFont,
+    (leFont*)&smallFont,
+    (leFont*)&extraSmallFont,
+    (leFont*)&Font0,
+    (leFont*)&figmaFont_Geist_Mono_10,
+    (leFont*)&figmaFont_Geist_Mono_14,
+    (leFont*)&figmaFont_Geist_Mono_12,
+    (leFont*)&figmaFont_Geist_Mono_16,
+    (leFont*)&Unbounded110,
+    (leFont*)&Unbounded28,
+    (leFont*)&Unbounded32,
+    (leFont*)&Unbounded20,
+    (leFont*)&GeistMono18,
+    (leFont*)&GeistMono16,
+    (leFont*)&GeistMono14,
+    (leFont*)&GeistMono12,
+    (leFont*)&GeistMono10,
+    (leFont*)&Unbounded80,
+};
+
+const leStringTable stringTable =
+{
+    {
+        LE_STREAM_LOCATION_ID_INTERNAL, // data location id
+        (void*)stringTable_data, // data address pointer
+        420, // data size
+    },
+    (void*)stringTable_data, // string table data
+    fontList, // font lookup table
+    LE_STRING_ENCODING_ASCII // encoding standard
+};
+
+
+// string list
+leTableString string_strCPUUpdate;
+leTableString string_figmaStr_042_8_mi;
+leTableString string_figmaStr_kW;
+leTableString string_figmaStr_38_C;
+leTableString string_figmaStr_42_5;
+leTableString string_figmaStr_ECO;
+leTableString string_strKPH;
+leTableString string_figmaStr_62_C;
+leTableString string_strCPUDraw;
+leTableString string_strAnim;
+leTableString string_figmaStr_Battery_0;
+leTableString string_figmaStr_KM;
+leTableString string_figmaStr_124;
+leTableString string_figmaStr_TOUR;
+leTableString string_strDistance;
+leTableString string_figmaStr_Est__Range;
+leTableString string_strSpeedSmall;
+leTableString string_figmaStr_20_45;
+leTableString string_figmaStr_Power;
+leTableString string_figmaStr_REGEN;
+leTableString string_figmaStr_DISCHARGE;
+leTableString string_figmaStr_SPORT;
+leTableString string_strStreet;
+leTableString string_figmaStr_ODO;
+leTableString string_figmaStr_184;
+leTableString string_strGaugeValue;
+leTableString string_figmaStr_Motor;
+leTableString string_figmaStr_Battery;
+leTableString string_strFPS;
+leTableString string_figmaStr_TRIP_A;
+leTableString string_figmaStr_001240_mi;
+leTableString string_figmaStr_72;
+leTableString string_figmaStr_BOOST;
+leTableString string_figmaStr_KPH;
+leTableString string_figmaStr__Pct;
+
+void initializeStrings(void)
+{
+    leTableString_Constructor(&string_strCPUUpdate, stringID_strCPUUpdate);
+    leTableString_Constructor(&string_figmaStr_042_8_mi, stringID_figmaStr_042_8_mi);
+    leTableString_Constructor(&string_figmaStr_kW, stringID_figmaStr_kW);
+    leTableString_Constructor(&string_figmaStr_38_C, stringID_figmaStr_38_C);
+    leTableString_Constructor(&string_figmaStr_42_5, stringID_figmaStr_42_5);
+    leTableString_Constructor(&string_figmaStr_ECO, stringID_figmaStr_ECO);
+    leTableString_Constructor(&string_strKPH, stringID_strKPH);
+    leTableString_Constructor(&string_figmaStr_62_C, stringID_figmaStr_62_C);
+    leTableString_Constructor(&string_strCPUDraw, stringID_strCPUDraw);
+    leTableString_Constructor(&string_strAnim, stringID_strAnim);
+    leTableString_Constructor(&string_figmaStr_Battery_0, stringID_figmaStr_Battery_0);
+    leTableString_Constructor(&string_figmaStr_KM, stringID_figmaStr_KM);
+    leTableString_Constructor(&string_figmaStr_124, stringID_figmaStr_124);
+    leTableString_Constructor(&string_figmaStr_TOUR, stringID_figmaStr_TOUR);
+    leTableString_Constructor(&string_strDistance, stringID_strDistance);
+    leTableString_Constructor(&string_figmaStr_Est__Range, stringID_figmaStr_Est__Range);
+    leTableString_Constructor(&string_strSpeedSmall, stringID_strSpeedSmall);
+    leTableString_Constructor(&string_figmaStr_20_45, stringID_figmaStr_20_45);
+    leTableString_Constructor(&string_figmaStr_Power, stringID_figmaStr_Power);
+    leTableString_Constructor(&string_figmaStr_REGEN, stringID_figmaStr_REGEN);
+    leTableString_Constructor(&string_figmaStr_DISCHARGE, stringID_figmaStr_DISCHARGE);
+    leTableString_Constructor(&string_figmaStr_SPORT, stringID_figmaStr_SPORT);
+    leTableString_Constructor(&string_strStreet, stringID_strStreet);
+    leTableString_Constructor(&string_figmaStr_ODO, stringID_figmaStr_ODO);
+    leTableString_Constructor(&string_figmaStr_184, stringID_figmaStr_184);
+    leTableString_Constructor(&string_strGaugeValue, stringID_strGaugeValue);
+    leTableString_Constructor(&string_figmaStr_Motor, stringID_figmaStr_Motor);
+    leTableString_Constructor(&string_figmaStr_Battery, stringID_figmaStr_Battery);
+    leTableString_Constructor(&string_strFPS, stringID_strFPS);
+    leTableString_Constructor(&string_figmaStr_TRIP_A, stringID_figmaStr_TRIP_A);
+    leTableString_Constructor(&string_figmaStr_001240_mi, stringID_figmaStr_001240_mi);
+    leTableString_Constructor(&string_figmaStr_72, stringID_figmaStr_72);
+    leTableString_Constructor(&string_figmaStr_BOOST, stringID_figmaStr_BOOST);
+    leTableString_Constructor(&string_figmaStr_KPH, stringID_figmaStr_KPH);
+    leTableString_Constructor(&string_figmaStr__Pct, stringID_figmaStr__Pct);
+}
