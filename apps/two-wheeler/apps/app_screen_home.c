@@ -31,6 +31,12 @@
       Phone, Light) with visual selection feedback. The Map button navigates
       to the NavScreen.
 
+    - Camera Preview: The Camera button toggles a live USB camera preview.
+      Frames are captured as uncompressed YUYV and pushed straight to a display
+      overlay plane by app_camera.c, bypassing Legato entirely, so the preview
+      costs the UI render loop almost nothing. See app_camera.h for the module
+      layering.
+
     - Needle Rendering: Custom draw surface callback renders the speedometer
       needle using vector graphics at the current gauge angle.
  *******************************************************************************/
@@ -40,6 +46,7 @@
 #include "app_anim.h"
 #include "app_metrics.h"
 #include "app_sys_timer.h"
+#include "app_camera.h"
 
 #include <stdio.h>
 /*******************************************************************************
@@ -47,6 +54,14 @@
  ******************************************************************************/
 #define BATTERY_FLASH_INTERVAL_MS 500   // Battery icon flash rate when depleted
 #define DOUBLE_TAP_THRESHOLD_MS 300     // Max time between taps for double-tap
+
+/* Camera preview placement on the 800x480 cluster. The overlay plane scales the
+   camera frame to this rectangle in hardware, so these values are free to
+   change without affecting CPU cost. */
+#define CAMERA_PREVIEW_X      160
+#define CAMERA_PREVIEW_Y      60
+#define CAMERA_PREVIEW_WIDTH  480
+#define CAMERA_PREVIEW_HEIGHT 360
 
 /*******************************************************************************
  * Module Variables
@@ -154,6 +169,10 @@ void Home_OnShow(void)
  ******************************************************************************/
 void Home_OnHide(void)
 {
+    /* Release the camera and its overlay plane so the preview does not stay
+       composited over whichever screen comes next. */
+    Camera_Stop();
+
     Gauge_Reset();
 }
 
@@ -199,6 +218,10 @@ void Home_OnUpdate(void)
         Home_image_iconBattery->fn->setVisible(Home_image_iconBattery, LE_TRUE);
     }
 
+    /* Pump the camera preview. Returns immediately when idle or when no frame
+       has arrived, so this is safe to call every rendered frame. */
+    Camera_Tasks();
+
     Metrics_Update(Home_lblUpdatePct, Home_lblDrawPct, Home_lblFPSValue);
 }
 
@@ -240,10 +263,31 @@ void event_Home_btnMap_OnPressed(leButtonWidget* btn)
     legato_showScreen(screenID_NavScreen);
 }
 
-// Camera button - visual feedback only
+/*******************************************************************************
+ * Camera button - toggles the live USB camera preview.
+ * Bring-up is asynchronous: Camera_Start() only arms the state machine, and
+ * Camera_Tasks() in Home_OnUpdate does the work, so pressing the button never
+ * stalls the UI even when no camera is attached.
+ ******************************************************************************/
 void event_Home_btnCamera_OnPressed(leButtonWidget* btn)
 {
     Buttons_Select(&homeButtonState, BTN_IDX_CAMERA);
+
+    if (Camera_GetState() != CAMERA_STATE_IDLE)
+    {
+        Camera_Stop();
+        return;
+    }
+
+    cameraConfig cfg;
+
+    Camera_ConfigDefault(&cfg);
+    cfg.destX      = CAMERA_PREVIEW_X;
+    cfg.destY      = CAMERA_PREVIEW_Y;
+    cfg.destWidth  = CAMERA_PREVIEW_WIDTH;
+    cfg.destHeight = CAMERA_PREVIEW_HEIGHT;
+
+    Camera_Start(&cfg);
 }
 
 // Phone button - visual feedback only

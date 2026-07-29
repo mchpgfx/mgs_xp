@@ -50,6 +50,14 @@ struct GfxDevice {
 
 struct GfxDevice *GFX_Initialize(void);
 
+/*
+ * Returns the device created by GFX_Initialize(), or NULL if it has not run
+ * yet. Lets other subsystems (for example the camera preview, which drives its
+ * own overlay plane) share the already-open KMS device instead of opening
+ * /dev/dri/card0 a second time.
+ */
+struct GfxDevice *GFX_GetDevice(void);
+
 void GFX_Update(void);
 
 //int32_t GFX_Initialize_touch(void);

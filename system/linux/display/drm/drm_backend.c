@@ -522,6 +522,11 @@ err:
     return NULL;
 }
 
+struct GfxDevice *GFX_GetDevice(void)
+{
+    return GfxDev;
+}
+
 void GFX_Update(void)
 {
     if (!GfxDev) {

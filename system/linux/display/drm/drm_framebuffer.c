@@ -56,12 +56,26 @@ struct kms_framebuffer *kms_framebuffer_create(struct kms_device *device,
 	args.height = height;
 
 	switch (format) {
+	case DRM_FORMAT_ARGB8888:
 	case DRM_FORMAT_XRGB8888:
 	case DRM_FORMAT_XBGR8888:
 	case DRM_FORMAT_RGBA8888:
 		args.bpp = 32;
 		break;
 	case DRM_FORMAT_RGB565:
+		args.bpp = 16;
+		break;
+	/*
+	 * Packed YUV 4:2:2. Two pixels share a chroma pair in four bytes
+	 * (Y0 U Y1 V), which averages 16 bits per pixel, so a dumb buffer at
+	 * bpp 16 yields exactly the pitch these formats need. Single plane, so
+	 * the one handle/pitch/offset entry set up below is sufficient.
+	 * Required for pushing camera frames to an overlay plane unconverted.
+	 */
+	case DRM_FORMAT_YUYV:
+	case DRM_FORMAT_YVYU:
+	case DRM_FORMAT_UYVY:
+	case DRM_FORMAT_VYUY:
 		args.bpp = 16;
 		break;
 
