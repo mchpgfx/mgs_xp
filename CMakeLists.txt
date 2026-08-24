@@ -170,6 +170,7 @@ elseif(PLATFORM_LINUX)
 endif()
 
 add_subdirectory(apps/quickstart)
+add_subdirectory(apps/examples)
 
 # Windows: Link SDL2 and copy DLL
 if(PLATFORM_WINDOWS AND SDL2_FOUND)

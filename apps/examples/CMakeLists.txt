@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.14)
+
+# MGS XP Examples
+# Each subdirectory contains a standalone example application
+
+add_subdirectory(button)
+add_subdirectory(bargraph)
+add_subdirectory(checkbox)
+add_subdirectory(circular_slider)
+add_subdirectory(image)
+add_subdirectory(image_sequence)
+add_subdirectory(label)
+add_subdirectory(line)
+add_subdirectory(line_graph)
+add_subdirectory(list)
+add_subdirectory(multi_language)
+add_subdirectory(panel)
+add_subdirectory(progress_bar)
+add_subdirectory(slider)
+add_subdirectory(keypad)
+add_subdirectory(calendar)
+add_subdirectory(qwerty)
+add_subdirectory(custom_widget)
+add_subdirectory(draw_surface)
+add_subdirectory(global_widgets)
+add_subdirectory(runtime_str)
