@@ -61,7 +61,7 @@ For cloning the repository: https://git-scm.com/download/win
    - Install **C/C++** by Microsoft
 
 3. **Open the project:**
-   - File → Open Folder → Select `mgs_xp_github_mirror`
+   - File → Open Folder → Select `mgs_xp`
 
 4. **Configure CMake Kit:**
    - Press `Ctrl+Shift+P` to open Command Palette
@@ -119,7 +119,7 @@ The SDL2 library is bundled in the repository - no external SDL2 installation re
 Open Command Prompt and run:
 
 ```cmd
-cd C:\path\to\mgs_xp_github_mirror
+cd C:\path\to\mgs_xp
 mkdir build
 cd build
 cmake -G "MinGW Makefiles" ..
@@ -136,7 +136,7 @@ The executable will be at: `build\apps\quickstart\mgs_quickstart.exe`
 
 2. **Navigate to the project directory:**
    ```cmd
-   cd C:\path\to\mgs_xp_github_mirror
+   cd C:\path\to\mgs_xp
    ```
 
 3. **Create the build directory:**
@@ -193,7 +193,7 @@ The quickstart demo opens an 800x480 SDL2 window displaying the Legato UI. Use t
 
 To run from any directory:
 ```cmd
-C:\path\to\mgs_xp_github_mirror\build\apps\quickstart\mgs_quickstart.exe
+C:\path\to\mgs_xp\build\apps\quickstart\mgs_quickstart.exe
 ```
 
 ## Build Options
@@ -256,7 +256,7 @@ Use the full path or ensure CMake is in PATH:
 
 The bundled SDL2 library was not found. Ensure you're building from the repository root:
 ```cmd
-cd C:\path\to\mgs_xp_github_mirror
+cd C:\path\to\mgs_xp
 mkdir build
 cd build
 cmake -G "MinGW Makefiles" ..
@@ -277,7 +277,7 @@ copy system\windows\sdl2\bin\SDL2.dll build\apps\quickstart\
 ## Project Structure
 
 ```
-mgs_xp_github_mirror/
+mgs_xp/
 ├── apps/quickstart/          # Example application
 ├── gfx/middleware/legato/    # Legato graphics library
 ├── system/

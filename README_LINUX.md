@@ -73,7 +73,7 @@ git submodule update --init --recursive
    - Install **C/C++** by Microsoft
 
 3. **Open the project:**
-   - File → Open Folder → Select `mgs_xp_github_mirror`
+   - File → Open Folder → Select `mgs_xp`
 
 4. **Configure CMake Kit:**
    - Press `Ctrl+Shift+P` to open Command Palette
@@ -332,7 +332,7 @@ make -j$(nproc)
 ## Project Structure
 
 ```
-mgs_xp_github_mirror/
+mgs_xp/
 ├── apps/quickstart/          # Example application
 ├── gfx/middleware/legato/    # Legato graphics library
 ├── system/
