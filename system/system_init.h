@@ -24,6 +24,9 @@
 #ifndef SYSTEM_INIT_H
 #define SYSTEM_INIT_H
 
+#include <stdint.h>
+
+extern uint32_t dt;
 
 void SYS_Initialize(void* data);
 

@@ -26,7 +26,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <stdbool.h>
 #include <string.h>
 #include "gfx/driver/gfx_driver.h"
